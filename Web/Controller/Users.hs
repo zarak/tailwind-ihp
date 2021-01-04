@@ -30,9 +30,13 @@ instance Controller UsersController where
             |> ifValid \case
                 Left user -> render EditView { .. }
                 Right user -> do
+                    hashed <- hashPassword (get #passwordHash user)
+                    user <- user
+                        |> set #passwordHash hashed
+                        |> createRecord
                     user <- user |> updateRecord
-                    setSuccessMessage "User updated"
-                    redirectTo EditUserAction { .. }
+                    setSuccessMessage "You have registered successfully"
+                    redirectTo NewSessionsAction
 
     action CreateUserAction = do
         let user = newRecord @User
@@ -53,3 +57,5 @@ instance Controller UsersController where
 
 buildUser user = user
     |> fill @["email","passwordHash","failedLoginAttempts"]
+    |> validateField #email isEmail
+    |> validateField #passwordHash nonEmpty

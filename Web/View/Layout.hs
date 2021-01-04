@@ -95,11 +95,12 @@ navbar = [hsx|
 
 logoutButtonHtml :: User -> Html
 logoutButtonHtml user = [hsx|
-    <a class="inline-block mr-0 text-red-100 bg-red-500 px-4 py-2 rounded hover:bg-red-400 hover:text-red-50 transition ease-in duration-100 js-delete js-delete-no-confirm"
+    <a class="inline-block mr-0 text-blue-100 bg-blue-500 px-4 py-2 rounded hover:bg-blue-400 hover:text-blue-50 transition ease-in duration-100 js-delete js-delete-no-confirm"
        href={DeleteSessionAction}>Logout</a>
 |]
 
 loginButtonHtml :: Html
 loginButtonHtml = [hsx|
-    <a class="inline-block mr-0 text-red-100 bg-red-500 px-4 py-2 rounded hover:bg-red-400 hover:text-red-50 transition ease-in duration-100" href={NewSessionsAction}>Login</a>
+    <a class="px-3" href={NewUserAction}>Sign Up</a>
+    <a class="btn font-bold" href={NewSessionsAction}>Login</a>
 |]
