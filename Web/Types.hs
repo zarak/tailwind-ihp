@@ -3,6 +3,16 @@ module Web.Types where
 import IHP.Prelude
 import IHP.ModelSupport
 import Generated.Types
+import IHP.LoginSupport.Types
+
+instance HasNewSessionUrl User where
+    newSessionUrl _ = "/NewSession"
+
+data SessionsController
+    = NewSessionsAction
+    | CreateSessionAction
+    | DeleteSessionAction
+    deriving (Eq, Show, Data)
 
 data WebApplication = WebApplication deriving (Eq, Show)
 
