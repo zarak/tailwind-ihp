@@ -1,5 +1,6 @@
 module Web.View.Static.Welcome where
 import Web.View.Prelude
+import Application.Helper.View
 
 data WelcomeView = WelcomeView
 
