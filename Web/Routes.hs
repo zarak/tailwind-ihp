@@ -9,3 +9,6 @@ instance AutoRoute SessionsController
 instance AutoRoute StaticController
 instance AutoRoute TweetsController
 
+
+instance AutoRoute UsersController
+
