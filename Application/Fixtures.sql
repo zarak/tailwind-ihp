@@ -12,3 +12,15 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 
+SET SESSION AUTHORIZATION DEFAULT;
+
+ALTER TABLE public.tweets DISABLE TRIGGER ALL;
+
+INSERT INTO public.tweets (id, title, body) VALUES ('3822d194-b86f-4d59-ac85-96e55c6747b2', '', '');
+INSERT INTO public.tweets (id, title, body) VALUES ('d8e1fdfe-28e8-4d3c-ba66-a0649ab3bf32', '', '');
+INSERT INTO public.tweets (id, title, body) VALUES ('6bf52ddf-a802-44ad-93ab-ec4b40a8c974', '', '');
+
+
+ALTER TABLE public.tweets ENABLE TRIGGER ALL;
+
+
