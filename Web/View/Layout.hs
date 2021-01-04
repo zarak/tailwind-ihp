@@ -94,7 +94,7 @@ navbar = [hsx|
 
 
 logoutButtonHtml :: User -> Html
-logoutButtonHtml user = [hsx|
+logoutButtonHtml _ = [hsx|
     <a class="inline-block mr-0 text-blue-100 bg-blue-500 px-4 py-2 rounded hover:bg-blue-400 hover:text-blue-50 transition ease-in duration-100 js-delete js-delete-no-confirm"
        href={DeleteSessionAction}>Logout</a>
 |]
