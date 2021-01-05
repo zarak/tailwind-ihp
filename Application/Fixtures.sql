@@ -26,7 +26,8 @@ ALTER TABLE public.tweets ENABLE TRIGGER ALL;
 
 ALTER TABLE public.users DISABLE TRIGGER ALL;
 
-INSERT INTO public.users (id, email, password_hash, locked_at, failed_login_attempts) VALUES ('9cd91064-c849-415f-86a6-309ea662ac85', 'test@test.com', 'test1234', NULL, 1);
+INSERT INTO public.users (id, email, password_hash, locked_at, failed_login_attempts) VALUES ('3aa5be6d-9828-422d-8cca-32498941be97', 'other@test.com', 'test1234', NULL, 0);
+INSERT INTO public.users (id, email, password_hash, locked_at, failed_login_attempts) VALUES ('9cd91064-c849-415f-86a6-309ea662ac85', 'test@test.com', 'test1234', NULL, 3);
 
 
 ALTER TABLE public.users ENABLE TRIGGER ALL;

@@ -6,5 +6,5 @@ data WelcomeView = WelcomeView
 
 instance View WelcomeView where
     html WelcomeView = [hsx|
-        <a href={NewSessionsAction} class="font-bold">Login</a>
+        Welcome!
 |]

@@ -9,7 +9,7 @@ instance HasNewSessionUrl User where
     newSessionUrl _ = "/NewSession"
 
 data SessionsController
-    = NewSessionsAction
+    = NewSessionAction
     | CreateSessionAction
     | DeleteSessionAction
     deriving (Eq, Show, Data)

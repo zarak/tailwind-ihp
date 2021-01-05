@@ -11,13 +11,7 @@ instance View NewView where
 
 renderForm :: User -> Html
 renderForm user = formFor user [hsx|
-    <form method="POST" action={NewUserAction}>
-        <div class="form-group">
-            <input name="email" type="email" class="form-control" placeholder="E-Mail"/>
-        </div>
-        <div class="form-group">
-            <input name="password" type="password" class="form-control" placeholder="Password"/>
-        </div>
-        <button type="submit" class="btn">Login</button>
-    </form>
+    {(textField #email) { placeholder="Email", fieldLabel="" }}
+    {(passwordField #passwordHash) { placeholder="Password", fieldLabel="" }}
+    {submitButton}
 |]

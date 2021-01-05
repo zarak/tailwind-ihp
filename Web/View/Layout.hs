@@ -102,5 +102,5 @@ logoutButtonHtml _ = [hsx|
 loginButtonHtml :: Html
 loginButtonHtml = [hsx|
     <a class="px-3" href={NewUserAction}>Sign Up</a>
-    <a class="btn font-bold" href={NewSessionsAction}>Login</a>
+    <a class="btn font-bold" href={NewSessionAction}>Login</a>
 |]

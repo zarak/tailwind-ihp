@@ -47,7 +47,7 @@ instance Controller UsersController where
                         |> createRecord
                     user <- user |> updateRecord
                     setSuccessMessage "You have registered successfully"
-                    redirectTo NewSessionsAction
+                    redirectTo NewSessionAction
 
     action DeleteUserAction { userId } = do
         user <- fetch userId
