@@ -59,3 +59,8 @@ buildUser user = user
     |> fill @["email","passwordHash","failedLoginAttempts"]
     |> validateField #email isEmail
     |> validateField #passwordHash nonEmpty
+    |> validateField #passwordHash (passwordMatch (param "password2"))
+
+passwordMatch pw1 pw2 = if pw1 == pw2
+                           then Success
+                           else Failure "Passwords must match"
