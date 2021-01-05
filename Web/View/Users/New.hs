@@ -13,5 +13,6 @@ renderForm :: User -> Html
 renderForm user = formFor user [hsx|
     {(textField #email) { placeholder="Email", fieldLabel="" }}
     {(passwordField #passwordHash) { placeholder="Password", fieldLabel="" }}
+    {(passwordField #passwordHash) { placeholder="Confirm Password", fieldLabel="", fieldName="password2" }}
     {submitButton}
 |]
