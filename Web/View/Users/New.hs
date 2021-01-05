@@ -5,8 +5,17 @@ data NewView = NewView { user :: User }
 
 instance View NewView where
     html NewView { .. } = [hsx|
-        <h1>New User</h1>
-        {renderForm user}
+        <div class="h-100" id="sessions-new">
+            <div class="d-flex align-items-center">
+                <div class="w-100">
+                    <div style="max-width: 400px" class="mx-auto mb-5">
+                        <div>New User</div>
+                        {renderFlashMessages}
+                        {renderForm user}
+                    </div>
+                </div>
+            </div>
+        </div>
     |]
 
 renderForm :: User -> Html
